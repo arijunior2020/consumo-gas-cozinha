@@ -1,0 +1,67 @@
+/* Gradiente de fundo */
+body {
+    background: rgb(231,240,237);
+    background: radial-gradient(circle, rgba(231,240,237,1) 35%, rgba(138,141,163,1) 70%);
+}
+
+.container {
+    min-height: 100vh; /* Garante que a div ocupe 100% da tela sem rolar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Define uma altura máxima para o accordion e adiciona scroll interno */
+.accordion-body {
+    max-height: 150px; /* Ajuste essa altura conforme necessário */
+    overflow-y: auto;  /* Adiciona scroll interno quando o conteúdo for muito grande */
+}
+
+/* Ajustes adicionais para o modal e outras partes */
+.modal-body {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Estilo do card */
+.card {
+    max-width: 600px;             /* Largura máxima do card */
+    width: 100%;                  /* O card ocupará toda a largura disponível */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: rgb(73, 71, 71);      /* Fundo branco */
+}
+
+/* Centralização e estilo do botijão */
+.botijao-container {
+    position: relative;
+    width: 100%;
+    height: 100px; /* Define a altura da animação */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Outras configurações mantidas */
+#botijao {
+    width: 100px; /* Largura da imagem do botijão */
+    position: relative;
+    animation: rolar 5s ease-in-out infinite;
+}
+
+/* Animação para o botijão rolar */
+@keyframes rolar {
+    0% {
+        transform: translateX(-100%) rotate(0deg); /* Começa fora da tela à esquerda */
+    }
+    50% {
+        transform: translateX(100%) rotate(360deg); /* Movimenta até o outro lado com rotação */
+    }
+    100% {
+        transform: translateX(-100%) rotate(720deg); /* Volta ao início com rotação completa */
+    }
+}
