@@ -23,7 +23,7 @@ function calcularPrevisao() {
     previsaoFimGas.setDate(previsaoFimGas.getDate() + Math.round(diasDuracao));
 
     document.getElementById("resultadoConsumo").innerText = `A família consome aproximadamente ${consumoMensal.toFixed(2)} botijões por mês.`;
-    document.getElementById("previsaoCompra").innerText = `O gás deve acabar em: ${previsaoFimGas.toLocaleDateString()}`;
+    document.getElementById("previsaoCompra").innerText = `O gás deve acabar ou acabou em: ${previsaoFimGas.toLocaleDateString()}`;
 
     // Atualiza a barra de progresso
     atualizarBarraProgresso(ultimaCompra, diasDuracao);
