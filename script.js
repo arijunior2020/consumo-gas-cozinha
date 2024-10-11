@@ -53,6 +53,18 @@ function atualizarBarraProgresso(ultimaCompra, diasDuracao) {
     barraProgresso.style.width = `${progresso}%`;
     barraProgresso.innerText = `${Math.round(progresso)}%`;
 
+    // Atualiza a cor da barra de progresso com base nos thresholds
+    if (progresso <= 80) {
+        barraProgresso.classList.remove('bg-warning', 'bg-danger');
+        barraProgresso.classList.add('bg-success'); // Verde até 80%
+    } else if (progresso > 80 && progresso <= 90) {
+        barraProgresso.classList.remove('bg-success', 'bg-danger');
+        barraProgresso.classList.add('bg-warning'); // Amarela de 80% a 90%
+    } else {
+        barraProgresso.classList.remove('bg-success', 'bg-warning');
+        barraProgresso.classList.add('bg-danger'); // Vermelha acima de 90%
+    }
+
     // Verifica se o gás está prestes a acabar
     if (diasDuracao - diasValidos < 5) {
         document.getElementById("alerta").classList.remove("d-none");
@@ -60,6 +72,7 @@ function atualizarBarraProgresso(ultimaCompra, diasDuracao) {
         document.getElementById("alerta").classList.add("d-none");
     }
 }
+
 
 
 
